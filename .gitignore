@@ -1,3 +1,7 @@
 *.iml
 .DS_STORE
 .idea/
+.project
+bin
+.classpath
+.gitignore
