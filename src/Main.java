@@ -27,7 +27,7 @@ public class Main {
         }
         
         for(int i=0; i < NUM_REINDEER; i++ ) {
-            reindeer.add(new Reindeer("", santa, workshop));
+            reindeer.add(new Reindeer(Reindeer.reindeer[i], santa, workshop));
         }
     	
     	
