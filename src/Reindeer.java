@@ -7,7 +7,7 @@ import com.sun.xml.internal.ws.util.pipe.StandaloneTubeAssembler;
 public class Reindeer extends Thread {
 
     //todo: distribute these names to instantiations of reindeer
-    private final static String[] reindeer =
+    public final static String[] reindeer =
             {"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen", "Rudolph"};
 
     private Santa santa;
