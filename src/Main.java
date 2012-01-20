@@ -11,6 +11,7 @@ public class Main {
 	private final int ELF_COUNT_WORTH_SANTAS_ATTENTION = 3;
 	private final int MILLIS_PER_DAY = 15000;
 	private final double INIT_REINDEER_DELAY = INIT_DAYS_TO_XMAS * MILLIS_PER_DAY * .8;
+	private final double INIT_ELF_DELAY = INIT_DAYS_TO_XMAS * MILLIS_PER_DAY * .1;
     
     public static void main(String[] args)  {
     	
