@@ -1,13 +1,66 @@
+import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.CyclicBarrier;
 
 /**
  * @author ian hunt
+ * @author christoffer rosen
  * @date 1/16/12
  */
+
+
 public class Workshop {
 
     private ArrayBlockingQueue<Elf> elfQueue = new ArrayBlockingQueue<Elf>(3);
-    private ArrayBlockingQueue<Reindeer> warmingHutt = new ArrayBlockingQueue<Reindeer>(9);
+    
+    private final ArrayList<Elf> elves = new ArrayList<Elf>();
+    private final CyclicBarrier warmingHut;
+    private final Santa santa;
+    
+    public Workshop(Santa santa) {
+    	
+    	// will make all reindeer wait until the last one arrives.
+    	// the last one to arrive will go and notify santa. 
+    	// then, all reindeer threads are released.
+    	warmingHut = new CyclicBarrier(Main.NUM_ELVES,
+    								new Runnable() {
+    									public void run() {
+    										// Notify Santa
+    										notifySanta();
+    									}
+    	});
+    	
+    	this.santa = santa;
+    	initReindeer();
+    	initElves();
+    }
+    
+    /**
+     * Creates all reindeer and starts them.
+     */
+    private void initReindeer() {
+    	for(int i = 0; i < Main.NUM_REINDEER; i++ ){
+    		Reindeer reindeer = new Reindeer(ReindeerNames.reindeer[i], warmingHut);
+    		reindeer.start();
+    	}
+    	
+    }
+    
+    /** 
+     * Creates all the elves and start them.
+     */
+    private void initElves() {
+    	for(int i=0; i < Main.NUM_ELVES; i++ ) {
+    		Elf elf = new Elf(this, santa);
+            elves.add(elf);
+            elf.start();
+            
+        }
+    }
+    public void notifySanta() {
+    	// Santa.notify() - Notify Santa!
+    	
+    }
 
     public ArrayBlockingQueue<Elf> getElfQueue() {
         return elfQueue;
@@ -17,11 +70,4 @@ public class Workshop {
         this.elfQueue = elfQueue;
     }
 
-    public ArrayBlockingQueue<Reindeer> getWarmingHutt() {
-        return warmingHutt;
-    }
-
-    public void setWarmingHutt(ArrayBlockingQueue<Reindeer> warmingHutt) {
-        this.warmingHutt = warmingHutt;
-    }
 }

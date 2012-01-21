@@ -1,41 +1,36 @@
-import com.sun.xml.internal.ws.util.pipe.StandaloneTubeAssembler;
+import java.util.concurrent.CyclicBarrier;
+
 
 /**
  * @author ian hunt
  * @date 1/16/12
  */
+
+/**
+ * Represents one of Santa's Reindeers.
+ * Uses a CyclicBarrier to represent the warming hut. 
+ */
 public class Reindeer extends Thread {
+	private final CyclicBarrier barrier;
+    
 
-    //todo: distribute these names to instantiations of reindeer
-    public final static String[] reindeer =
-            {"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen", "Rudolph"};
-
-    private Santa santa;
-    private Workshop workshop;
-
-    public Reindeer(String name, Santa santa, Workshop workshop) {
+    public Reindeer(String name, CyclicBarrier barrier) {
         super(name);
-        this.santa = santa;
-        this.workshop = workshop;
+        this.barrier = barrier;
     }
 
     public void run() {
+    	
         try {
             //todo: proper wait time
-            Thread.currentThread().wait(10000);
+            Thread.currentThread().wait(1000);
+            barrier.wait();
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-        synchronized (this) {
-            workshop.getWarmingHutt().add(this);
-            if(workshop.getWarmingHutt().size() == 9) {
-                santa.notify();
-            }
-        }
-        //sleep for a random amount of time with large initial value
-        //add yourself to warming hut
-        // if after add, warming hut size == 9, notify santa
     }
+      
+
 
 
 }
