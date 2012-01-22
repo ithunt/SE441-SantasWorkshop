@@ -17,11 +17,11 @@ public class Workshop {
     private final CyclicBarrier warmingHut;
     private final Santa santa;
     
-    public Workshop(Santa santa) {
+    public Workshop() {
     	
-    	// will make all reindeer wait until the last one arrives.
+    	// will make all names wait until the last one arrives.
     	// the last one to arrive will go and notify santa. 
-    	// then, all reindeer threads are released.
+    	// then, all names threads are released.
     	warmingHut = new CyclicBarrier(Main.NUM_ELVES,
     								new Runnable() {
     									public void run() {
@@ -30,17 +30,17 @@ public class Workshop {
     									}
     	});
     	
-    	this.santa = santa;
+    	this.santa = new Santa(this);
     	initReindeer();
     	initElves();
     }
     
     /**
-     * Creates all reindeer and starts them.
+     * Creates all names and starts them.
      */
     private void initReindeer() {
     	for(int i = 0; i < Main.NUM_REINDEER; i++ ){
-    		Reindeer reindeer = new Reindeer(ReindeerNames.reindeer[i], warmingHut);
+    		Reindeer reindeer = new Reindeer(Reindeer.names[i], warmingHut);
     		reindeer.start();
     	}
     	
@@ -57,6 +57,7 @@ public class Workshop {
             
         }
     }
+    
     public void notifySanta() {
     	// Santa.notify() - Notify Santa!
     	
@@ -70,4 +71,7 @@ public class Workshop {
         this.elfQueue = elfQueue;
     }
 
+    public CyclicBarrier getWarmingHut() {
+        return warmingHut;
+    }
 }

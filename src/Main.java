@@ -17,19 +17,9 @@ public class Main {
     
     public static void main(String[] args)  {
 
-        final ArrayList<Elf> elves = new ArrayList<Elf>();
-        final ArrayList<Reindeer> reindeer = new ArrayList<Reindeer>();
+        Workshop workshop = new Workshop();
         
-        final Workshop workshop = new Workshop();
-        final Santa santa = new Santa(workshop);
-        
-        for(int i=0; i < NUM_ELVES; i++ ) {
-            elves.add(new Elf(workshop, santa));
-        }
-        
-        for(int i=0; i < NUM_REINDEER; i++ ) {
-            reindeer.add(new Reindeer(Reindeer.reindeer[i], santa, workshop));
-        }
+
     	
     	
     }
