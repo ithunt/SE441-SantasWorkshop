@@ -11,7 +11,7 @@ public class Santa {
     }
 
 
-    public synchronized void wake() {
+    public synchronized void awaken() {
         if(workshop.getWarmingHut().isBroken()) { //&& is christmas
             //presents!
         } else if(workshop.getElfQueue().size() == 3) {

@@ -13,6 +13,9 @@ public class Elf extends Thread {
     }
 
     public void run() {
+    	
+    	
+    	
         while (true) {
             try {
                 Thread.currentThread().wait((long)(1000 + (Math.random()*2000)));
