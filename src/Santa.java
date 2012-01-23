@@ -11,19 +11,23 @@ public class Santa {
     }
 
 
-    public synchronized void awaken() {
-        if(workshop.getWarmingHut().isBroken()) { //&& is christmas
-            //presents!
-        } else if(workshop.getElfQueue().size() == 
-        		SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
-        	this.solveElvesProblems(); //problems solved
-        }
+    public void awaken() {
+    	synchronized (this){
+	        if(workshop.getWarmingHut().isBroken()) { //&& is christmas
+	        	hookUpReindeer();
+	        } else if(workshop.getElfQueue().size() == 
+	        		SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+	        	this.solveElvesProblems();
+	        }
+    	}
 
     }
     
+    /**
+     * 
+     */
     private void solveElvesProblems(){
     	
-    	synchronized (this){
     		ElfQueue<Elf> problemElves = workshop.getElfQueue();
     		Elf problemElf;
     		
@@ -35,7 +39,15 @@ public class Santa {
 					e.printStackTrace();
 				}
     		}
-    		
-    	}
     }
+    
+    private void hookUpReindeer(){
+    	//TODO
+    }
+    
+    public void doChristmas(){
+    	//TODO
+    }
+    
+    
 }

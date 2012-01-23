@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CyclicBarrier;
 
@@ -13,16 +14,17 @@ public class Workshop {
 
     private ArrayBlockingQueue<Elf> elfQueue = new ArrayBlockingQueue<Elf>(3);
     
-    private final ArrayList<Elf> elves = new ArrayList<Elf>();
+    private final ElfQueue<Elf> elvesWithProblems;
     private final CyclicBarrier warmingHut;
     private final Santa santa;
+    private final LinkedList<Elf> elves = new LinkedList<Elf>();
     
     public Workshop() {
     	
     	// will make all names wait until the last one arrives.
     	// the last one to arrive will go and notify santa. 
     	// then, all names threads are released.
-    	warmingHut = new CyclicBarrier(SantaConstants.NUM_ELVES,
+    	warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
     								new Runnable() {
     									public void run() {
     										// Notify Santa
@@ -31,6 +33,8 @@ public class Workshop {
     	});
     	
     	this.santa = new Santa(this);
+    	this.elvesWithProblems = new ElfQueue<Elf>(
+    			SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION, this.santa);
     	initReindeer();
     	initElves();
     }
@@ -58,16 +62,16 @@ public class Workshop {
         }
     }
     
-    public void notifySanta() {
+    private void notifySanta() {
     	// Santa.notify() - Notify Santa!
     	
     }
 
-    public ArrayBlockingQueue<Elf> getElfQueue() {
-        return elfQueue;
+    public ElfQueue<Elf> getElfQueue() {
+        return elvesWithProblems;
     }
 
-    public void setElfQueue(ArrayBlockingQueue<Elf> elfQueue) {
+    public void setElfQueue(ElfQueue<Elf> elfQueue) {
         this.elfQueue = elfQueue;
     }
 
