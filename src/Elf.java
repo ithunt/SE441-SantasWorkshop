@@ -1,3 +1,4 @@
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -7,17 +8,21 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Elf extends Thread {
     
-    private Workshop workshop;
-    private Santa santa;
-    private Lock hasProblem;
+    private final Workshop workshop;
+    private final Santa santa;
+    private final CountDownLatch start;
 
-    public Elf(Workshop workshop, Santa santa) {
+    public Elf(Workshop workshop, Santa santa, CountDownLatch start) {
         this.workshop = workshop;
         this.santa = santa;
-        this.hasProblem = new ReentrantLock();
+        this.start = start;
     }
 
     public void run() {
+
+        try {
+            start.await();
+        } catch (InterruptedException ex) {}
     	
         while (true) {
             try {

@@ -28,7 +28,7 @@ public class Santa {
      */
     private void solveElvesProblems(){
     	
-    		ElfQueue<Elf> problemElves = workshop.getElfQueue();
+    		final ElfQueue<Elf> problemElves = workshop.getElfQueue();
     		Elf problemElf;
     		
     		for (int i= 0; 1<SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION; ++i){

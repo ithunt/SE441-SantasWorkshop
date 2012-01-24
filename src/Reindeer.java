@@ -1,3 +1,4 @@
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 
@@ -14,14 +15,22 @@ public class Reindeer extends Thread {
         {"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen", "Rudolph"};
 
     private final CyclicBarrier barrier;
+    private final CountDownLatch start;
     
 
-    public Reindeer(String name, CyclicBarrier barrier) {
+    public Reindeer(String name, CyclicBarrier barrier, CountDownLatch start) {
         super(name);
         this.barrier = barrier;
+        this.start = start;
     }
 
     public void run() {
+        
+        try {
+            start.await();
+        } catch (InterruptedException ex) {
+
+        }
     	
         try {
             //todo: proper wait time

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -20,7 +21,7 @@ public class Workshop {
     private final LinkedList<Elf> elves = new LinkedList<Elf>();
     
     public Workshop() {
-    	
+
     	// will make all names wait until the last one arrives.
     	// the last one to arrive will go and notify santa. 
     	// then, all names threads are released.
@@ -31,20 +32,18 @@ public class Workshop {
     										notifySanta();
     									}
     	});
-    	
+
     	this.santa = new Santa(this);
     	this.elvesWithProblems = new ElfQueue<Elf>(
     			SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION, this.santa);
-    	initReindeer();
-    	initElves();
     }
     
     /**
      * Creates all names and starts them.
      */
-    private void initReindeer() {
+    public void initReindeer(CountDownLatch start) {
     	for(int i = 0; i < SantaConstants.NUM_REINDEER; i++ ){
-    		Reindeer reindeer = new Reindeer(Reindeer.names[i], warmingHut);
+    		Reindeer reindeer = new Reindeer(Reindeer.names[i], warmingHut, start);
     		reindeer.start();
     	}
     	
@@ -53,12 +52,12 @@ public class Workshop {
     /** 
      * Creates all the elves and start them.
      */
-    private void initElves() {
+    public void initElves(CountDownLatch start) {
     	for(int i=0; i < SantaConstants.NUM_ELVES; i++ ) {
-    		Elf elf = new Elf(this, santa);
+    		Elf elf = new Elf(this, santa, start);
             elves.add(elf);
             elf.start();
-            
+
         }
     }
     

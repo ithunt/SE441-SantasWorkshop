@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author ian hunt
@@ -9,7 +10,12 @@ public class Main {
     
     public static void main(String[] args)  {
 
-        Workshop workshop = new Workshop();
+        final Workshop workshop = new Workshop();
+        final CountDownLatch start = new CountDownLatch(1);
+
+        workshop.initElves(start);
+        workshop.initReindeer(start);
+
         
 
     	
