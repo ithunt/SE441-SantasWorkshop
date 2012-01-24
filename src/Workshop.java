@@ -40,7 +40,7 @@ public class Workshop {
     }
     
     /**
-     * Creates all names and starts them.
+     * Creates all reindeer and starts them.
      */
     private void initReindeer() {
     	for(int i = 0; i < SantaConstants.NUM_REINDEER; i++ ){
