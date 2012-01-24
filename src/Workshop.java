@@ -19,6 +19,7 @@ public class Workshop {
     private final CyclicBarrier warmingHut;
     private final Santa santa;
     private final LinkedList<Elf> elves = new LinkedList<Elf>();
+    private final ArrayList<Reindeer> reindeerList = new ArrayList<Reindeer>();
     
     public Workshop() {
 
@@ -39,11 +40,12 @@ public class Workshop {
     }
     
     /**
-     * Creates all names and starts them.
+     * Creates all reindeer and starts them.
      */
     public void initReindeer(CountDownLatch start) {
     	for(int i = 0; i < SantaConstants.NUM_REINDEER; i++ ){
     		Reindeer reindeer = new Reindeer(Reindeer.names[i], warmingHut, start);
+    		reindeerList.add(reindeer);
     		reindeer.start();
     	}
     	
@@ -57,8 +59,15 @@ public class Workshop {
     		Elf elf = new Elf(this, santa, start);
             elves.add(elf);
             elf.start();
-
         }
+    }
+    
+    /**
+     * Get list of all reindeer.
+     * @return	Returns all the reindeer
+     */
+    public ArrayList<Reindeer> getReindeerList() {
+    	return reindeerList;
     }
     
     private void notifySanta() {
