@@ -52,7 +52,7 @@ public class Elf extends Thread {
                 if (workshop.getProblemElfQueue().size() ==
                         SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
                     santa.awaken();
-                }
+                
             }
             //elf now in queue, wait for problem to be resolved
             try {
@@ -60,6 +60,7 @@ public class Elf extends Thread {
                 this.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
             }
 
             if (this.isInterrupted()) break;

@@ -46,8 +46,14 @@ public class Santa {
     		
     		for (int i=0; 1<SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION; ++i){
     			try {
+						
 					problemElf = problemElves.take();
-					problemElf.notify(); //problem solved!
+					
+					synchronized (problemElf) {
+						
+						problemElf.notify(); //problem solved!
+					
+    				}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

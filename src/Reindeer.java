@@ -54,7 +54,13 @@ public class Reindeer extends Thread {
         //Go chill in the tropics for a while
         try {
             //todo: proper wait time
-           this.wait(1000);
+        	
+        	synchronized (this) {
+				
+			
+        		//todo: proper wait time
+        		this.wait(1000);
+        	}
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
