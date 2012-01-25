@@ -1,6 +1,9 @@
+import java.util.AbstractQueue;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
@@ -13,46 +16,58 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Workshop {
 
-    private ArrayBlockingQueue<Elf> elfQueue = new ArrayBlockingQueue<Elf>(3);
-    
-    private final ElfQueue<Elf> elvesWithProblems;
+    private final BlockingQueue<Elf> problemElfQueue;
     private final CyclicBarrier warmingHut;
+    private final CountDownLatch sleigh;
+
     private final Santa santa;
-    private final LinkedList<Elf> elves = new LinkedList<Elf>();
-    private final ArrayList<Reindeer> reindeerList = new ArrayList<Reindeer>();
-    
+
+    private final List<Elf> elves = new ArrayList<Elf>();
+    private final List<Reindeer> reindeer = new ArrayList<Reindeer>();
+
+    private boolean isChristmas = false;
+
+    /**
+     * Workshop constructor
+     * Creates warming hut as cyclicbarrier that notifies santa when full
+     * Sleigh as CountDownLatch
+     * Inits Santa
+     * Builds Elf Problem Queue
+     */
     public Workshop() {
 
     	// will make all names wait until the last one arrives.
     	// the last one to arrive will go and notify santa. 
     	// then, all names threads are released.
-    	warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
+    	this.warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
     								new Runnable() {
     									public void run() {
-    										// Notify Santa
-    										notifySanta();
+    										santa.awaken();
     									}
     	});
 
-    	this.santa = new Santa(this);
-    	this.elvesWithProblems = new ElfQueue<Elf>(
-    			SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION, this.santa);
+        this.sleigh = new CountDownLatch(1);
+        this.santa = new Santa(this, sleigh);
+
+        this.problemElfQueue = new ArrayBlockingQueue<Elf>(SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION);
     }
     
     /**
      * Creates all reindeer and starts them.
+     * @param start  program starting signal
      */
     public void initReindeer(CountDownLatch start) {
     	for(int i = 0; i < SantaConstants.NUM_REINDEER; i++ ){
-    		Reindeer reindeer = new Reindeer(Reindeer.names[i], warmingHut, start);
-    		reindeerList.add(reindeer);
-    		reindeer.start();
+    		Reindeer r = new Reindeer(Reindeer.names[i], warmingHut, sleigh, start);
+            reindeer.add(r);
+    		r.start();
     	}
     	
     }
     
     /** 
      * Creates all the elves and start them.
+     * @param start program starting signal
      */
     public void initElves(CountDownLatch start) {
     	for(int i=0; i < SantaConstants.NUM_ELVES; i++ ) {
@@ -61,29 +76,29 @@ public class Workshop {
             elf.start();
         }
     }
-    
-    /**
-     * Get list of all reindeer.
-     * @return	Returns all the reindeer
-     */
-    public ArrayList<Reindeer> getReindeerList() {
-    	return reindeerList;
-    }
-    
-    private void notifySanta() {
-    	// Santa.notify() - Notify Santa!
-    	
-    }
 
-    public ElfQueue<Elf> getElfQueue() {
-        return elvesWithProblems;
-    }
-
-    public void setElfQueue(ElfQueue<Elf> elfQueue) {
-        this.elfQueue = elfQueue;
-    }
 
     public CyclicBarrier getWarmingHut() {
         return warmingHut;
+    }
+
+    public BlockingQueue<Elf> getProblemElfQueue() {
+        return problemElfQueue;
+    }
+
+    public CountDownLatch getSleigh() {
+        return sleigh;
+    }
+
+    public List<Reindeer> getReindeer() {
+        return reindeer;
+    }
+
+    public boolean isChristmas() {
+        return isChristmas;
+    }
+
+    public void setChristmas(boolean christmas) {
+        isChristmas = christmas;
     }
 }

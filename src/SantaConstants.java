@@ -1,4 +1,6 @@
-
+/**
+ * Holder class for Program Constants
+ */
 public class SantaConstants {
 
 	//list of constants

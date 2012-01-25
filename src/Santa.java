@@ -1,37 +1,50 @@
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CountDownLatch;
+
 /**
  * @author ian hunt
  * @date 1/16/12
  */
 public class Santa {
 
-    private Workshop workshop;
+    private final Workshop workshop;
+    private final CountDownLatch sleigh;
 
-    public Santa(Workshop workshop) {
-        this.workshop = workshop;
-    }
-
-
-    public void awaken() {
-    	synchronized (this){
-	        if(workshop.getWarmingHut().isBroken()) { //&& is christmas
-	        	hookUpReindeer();
-	        } else if(workshop.getElfQueue().size() == 
-	        		SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
-	        	this.solveElvesProblems();
-	        }
-    	}
-
-    }
-    
     /**
-     * 
+     * Santa Constructor
+     * @param workshop Santa's Workshop
+     * @param sleigh Santa's sleigh for reindeer and presents (CountDownLatch)
+     */
+    public Santa(Workshop workshop, CountDownLatch sleigh) {
+        this.workshop = workshop;
+        this.sleigh = sleigh;
+    }
+
+    /**
+     * Something requires Santa's Attention
+     * If Reindeer arrived && isChristmas() -> presents
+     *  else solve elf problems
+     */
+    public synchronized void awaken() {
+        if(workshop.getWarmingHut().isBroken() && workshop.isChristmas()) {
+            hookUpReindeer();
+        } else if(workshop.getProblemElfQueue().size() ==
+                SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+            this.solveElvesProblems();
+        }
+
+
+    }
+
+    /**
+     * Iterates through elfqueue and solves their problems (notify)
      */
     private void solveElvesProblems(){
-    	
-    		final ElfQueue<Elf> problemElves = workshop.getElfQueue();
+        
+        final BlockingQueue<Elf> problemElves = workshop.getProblemElfQueue();
     		Elf problemElf;
     		
-    		for (int i= 0; 1<SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION; ++i){
+    		for (int i=0; 1<SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION; ++i){
     			try {
 					problemElf = problemElves.take();
 					problemElf.notify(); //problem solved!
@@ -40,14 +53,16 @@ public class Santa {
 				}
     		}
     }
-    
+
+    /**
+     * Prepare the sleigh with all the reindeer and go!
+     */
     private void hookUpReindeer(){
-    	//TODO
+    	for(Reindeer r : workshop.getReindeer()) {
+            r.setLocation(Reindeer.ReindeerLocation.LOADING_SLEIGH);         
+        }
+        //Deliver presents!
+        sleigh.countDown();
     }
-    
-    public void doChristmas(){
-    	//TODO
-    }
-    
     
 }
