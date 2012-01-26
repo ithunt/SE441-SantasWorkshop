@@ -11,6 +11,8 @@ public class SantaConstants {
 	public static final int MILLIS_PER_DAY = 15000;
 	public static final double INIT_REINDEER_DELAY = INIT_DAYS_TO_XMAS * MILLIS_PER_DAY * .8;
 	public static final double INIT_ELF_DELAY = INIT_DAYS_TO_XMAS * MILLIS_PER_DAY * .1;
+	public final static String[] REINDEER_NAMES =
+        {"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen", "Rudolph"};
 	
 	
 }

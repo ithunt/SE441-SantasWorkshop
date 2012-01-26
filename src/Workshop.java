@@ -57,8 +57,8 @@ public class Workshop {
      * @param start  program starting signal
      */
     public void initReindeer(CountDownLatch start) {
-    	for(int i = 0; i < SantaConstants.NUM_REINDEER; i++ ){
-    		Reindeer r = new Reindeer(Reindeer.names[i], warmingHut, sleigh, start);
+    	for(String reindeerName : SantaConstants.REINDEER_NAMES){
+    		Reindeer r = new Reindeer(reindeerName, warmingHut, sleigh, start);
             reindeer.add(r);
     		r.start();
     	}

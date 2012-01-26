@@ -32,7 +32,7 @@ public class Main {
 
 
         //Schedule task to run at christmas
-        timer.schedule(christmas, SantaConstants.MILLIS_PER_DAY * 349);
+        timer.schedule(christmas, SantaConstants.MILLIS_PER_DAY * SantaConstants.INIT_DAYS_TO_XMAS);
 
         //Go!
         start.countDown();

@@ -37,6 +37,7 @@ public class Elf extends Thread {
                 //NEEDS TO TELL HOW LONG UNTIL XMAS!
                 //this.sleep((long)(SantaConstants.INIT_ELF_DELAY + (Math.random());
                 this.sleep(0);
+                //TODO
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }

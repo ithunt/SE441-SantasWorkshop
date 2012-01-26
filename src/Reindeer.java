@@ -12,9 +12,6 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class Reindeer extends Thread {
 
-    public final static String[] names =
-        {"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen", "Rudolph"};
-
     public static enum ReindeerLocation {
         TROPICS, WARMING_HUT, LOADING_SLEIGH, DELIVERING
     }
@@ -57,7 +54,7 @@ public class Reindeer extends Thread {
         //Go chill in the tropics for a while
         try {
             //todo: proper wait time
-            Thread.currentThread().wait(1000);
+           this.wait(1000);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
