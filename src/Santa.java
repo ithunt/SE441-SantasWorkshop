@@ -65,7 +65,7 @@ public class Santa {
      */
     private void hookUpReindeer(){
     	for(Reindeer r : workshop.getReindeer()) {
-            r.setLocation(Reindeer.ReindeerLocation.LOADING_SLEIGH);         
+            r.setLocation(Reindeer.ReindeerLocation.LOADING_SLEIGH);
         }
         //Deliver presents!
         sleigh.countDown();

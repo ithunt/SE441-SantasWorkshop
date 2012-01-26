@@ -34,10 +34,8 @@ public class Elf extends Thread {
 
         while (true) {
             try {
-                //NEEDS TO TELL HOW LONG UNTIL XMAS!
-                //this.sleep((long)(SantaConstants.INIT_ELF_DELAY + (Math.random());
-                this.sleep(0);
-                //TODO
+                //Random wait time
+                this.wait(getRandomWaitTime());
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
@@ -69,5 +67,17 @@ public class Elf extends Thread {
 
     }
 
+    /**
+     * Helper function for random number in range low-high using formula:
+     *          Min + (long)(Math.random() * ((Max - Min) + 1))
+     *          from StackOverflow
+     * @return random wait time (millis) in range from SantaConstants
+     */
+    public static long getRandomWaitTime() {
+        return SantaConstants.ELF_PROBLEM_MILLIS_LOW + 
+                (long)(Math.random() * ((SantaConstants.ELF_PROBLEM_MILLIS_HIGH -
+                        SantaConstants.ELF_PROBLEM_MILLIS_LOW) + 1));
+
+    }
 
 }
