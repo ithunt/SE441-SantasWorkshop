@@ -53,13 +53,9 @@ public class Reindeer extends Thread {
 
         //Go chill in the tropics for a while
         try {
-            //todo: proper wait time
-        	
         	synchronized (this) {
-				
-			
-        		//todo: proper wait time
-        		this.wait(1000);
+                System.out.println(this.getName() + " is off to the tropics!");
+        		this.wait(getReindeerWaitTime());
         	}
         } catch (InterruptedException ex) {
             ex.printStackTrace();
@@ -67,6 +63,8 @@ public class Reindeer extends Thread {
 
         //Returned from topics, wait in warming hut
         location = ReindeerLocation.WARMING_HUT;
+        System.out.println(this.getName() +
+                " returned from the tropics. Waiting in the warming hut");
         try {
             barrier.await();
         } catch (InterruptedException e) {
@@ -85,6 +83,9 @@ public class Reindeer extends Thread {
         //Christmas!
         this.location = ReindeerLocation.DELIVERING;
 
+        System.out.println(this.getName() +
+                " is done delivering presents. Back to the Bahamas baby!");
+
 
     }
 
@@ -94,5 +95,11 @@ public class Reindeer extends Thread {
 
     public void setLocation(ReindeerLocation location) {
         this.location = location;
+    }
+
+    public static long getReindeerWaitTime() {
+        return (long)SantaConstants.INIT_REINDEER_DELAY +
+                (long)(Math.random() * (SantaConstants.INIT_DAYS_TO_XMAS *
+                        SantaConstants.MILLIS_PER_DAY) * .2);
     }
 }

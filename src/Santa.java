@@ -30,7 +30,10 @@ public class Santa {
             hookUpReindeer();
         } else if(workshop.getProblemElfQueue().size() ==
                 SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+            System.out.println("Santa solving elf problems...");
             this.solveElvesProblems();
+
+            System.out.println("Santa done solving those pesky elf problems");
         }
 
 
@@ -39,25 +42,13 @@ public class Santa {
     /**
      * Iterates through elfqueue and solves their problems (notify)
      */
-    private void solveElvesProblems(){
-        
-        final BlockingQueue<Elf> problemElves = workshop.getProblemElfQueue();
-    		Elf problemElf;
-    		
-    		for (int i=0; 1<SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION; ++i){
-    			try {
-						
-					problemElf = problemElves.take();
-					
-					synchronized (problemElf) {
-						
-						problemElf.notify(); //problem solved!
-					
-    				}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-    		}
+    private synchronized void solveElvesProblems() {
+        for(Elf e : workshop.getProblemElfQueue()) {
+            synchronized (e) {
+                e.notify();
+            }
+        }
+        workshop.getProblemElfQueue().clear();
     }
 
     /**
@@ -65,10 +56,16 @@ public class Santa {
      */
     private void hookUpReindeer(){
     	for(Reindeer r : workshop.getReindeer()) {
+            System.out.println("Santa harnessed " + r.getName() + " to the sleigh!");
             r.setLocation(Reindeer.ReindeerLocation.LOADING_SLEIGH);
         }
         //Deliver presents!
+        System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
         sleigh.countDown();
+
+        System.out.println("Christmas over, exiting");
+        System.exit(0);
+
     }
     
 }

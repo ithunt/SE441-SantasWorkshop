@@ -42,6 +42,7 @@ public class Workshop {
     	this.warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
     								new Runnable() {
     									public void run() {
+                                            isChristmas = true;
     										santa.awaken();
     									}
     	});

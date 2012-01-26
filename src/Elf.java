@@ -33,13 +33,14 @@ public class Elf extends Thread {
         }
 
         while (true) {
-            try {
-                //Random wait time
-                this.wait(getRandomWaitTime());
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
+            synchronized (this) {
+                try {
+                    this.wait(getRandomWaitTime());
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
             }
-
+            System.out.println(this.getName() + " has a problem");
             //Add self to queue, check size to decide if santa should be awoken
             synchronized (this) {
                 try {
@@ -49,16 +50,19 @@ public class Elf extends Thread {
                 }
                 if (workshop.getProblemElfQueue().size() ==
                         SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+                    System.out.println(this.getName() + " was the third elf. Waking Santa");
                     santa.awaken();
-                
-            }
-            //elf now in queue, wait for problem to be resolved
-            try {
-                //elf has a problem
-                this.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+                } else {
+                    //elf now in queue, wait for problem to be resolved
+                    try {
+                        //elf has a problem
+                        this.wait();
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println(this.getName() + " problem solved. Back to making toys");
             }
 
             if (this.isInterrupted()) break;
