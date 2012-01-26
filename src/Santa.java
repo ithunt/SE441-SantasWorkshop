@@ -26,13 +26,11 @@ public class Santa {
      *  else solve elf problems
      */
     public synchronized void awaken() {
-        if(workshop.getWarmingHut().isBroken() && workshop.isChristmas()) {
+        if(workshop.isChristmas() && workshop.reindeerReturned()) {
             hookUpReindeer();
         } else if(workshop.getProblemElfQueue().size() ==
                 SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
-            System.out.println("Santa solving elf problems...");
             this.solveElvesProblems();
-
             System.out.println("Santa done solving those pesky elf problems");
         }
 

@@ -26,9 +26,15 @@ public class Main {
         final TimerTask christmas = new TimerTask() {
             @Override
             public void run() {
-                workshop.setChristmas(true);
+                System.out.println("Christmas!");
+                synchronized (workshop) {
+                    workshop.setChristmas(true);
+                }
+                workshop.getSanta().awaken();
+
             }
         };
+
 
 
         //Schedule task to run at christmas

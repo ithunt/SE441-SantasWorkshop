@@ -25,7 +25,8 @@ public class Workshop {
     private final List<Elf> elves = new ArrayList<Elf>();
     private final List<Reindeer> reindeer = new ArrayList<Reindeer>();
 
-    private boolean isChristmas = false;
+    private volatile boolean isChristmas = false;
+    private volatile boolean reindeerReturned = false;
 
     /**
      * Workshop constructor
@@ -42,8 +43,8 @@ public class Workshop {
     	this.warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
     								new Runnable() {
     									public void run() {
-                                            isChristmas = true;
-    										santa.awaken();
+                                            reindeerReturned = true;
+                                            System.out.println("All the reindeer have returned!");
     									}
     	});
 
@@ -101,5 +102,13 @@ public class Workshop {
 
     public void setChristmas(boolean christmas) {
         isChristmas = christmas;
+    }
+
+    public Santa getSanta() {
+        return santa;
+    }
+
+    public boolean reindeerReturned() {
+        return reindeerReturned;
     }
 }

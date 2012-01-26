@@ -33,37 +33,40 @@ public class Elf extends Thread {
         }
 
         while (true) {
-            synchronized (this) {
-                try {
+
+            try {
+                synchronized (this) {
                     this.wait(getRandomWaitTime());
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
                 }
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
             }
-            System.out.println(this.getName() + " has a problem");
-            //Add self to queue, check size to decide if santa should be awoken
-            synchronized (this) {
+
+            //System.out.println(this.getName() + " has a problem");
+
+            try {
+                //Add self to queue
+                workshop.getProblemElfQueue().put(this);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (workshop.getProblemElfQueue().size() ==
+                    SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+                System.out.println(this.getName() + " was the third elf. Waking Santa");
+                santa.awaken();
+            } else {
+
+                //elf now in queue, wait for problem to be resolved
                 try {
-                    workshop.getProblemElfQueue().put(this);
+                    synchronized (this) {
+                        this.wait();
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if (workshop.getProblemElfQueue().size() ==
-                        SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
-                    System.out.println(this.getName() + " was the third elf. Waking Santa");
-                    santa.awaken();
-                } else {
-                    //elf now in queue, wait for problem to be resolved
-                    try {
-                        //elf has a problem
-                        this.wait();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                System.out.println(this.getName() + " problem solved. Back to making toys");
             }
+            //System.out.println(this.getName() + " problem solved. Back to making toys");
+
 
             if (this.isInterrupted()) break;
 
@@ -78,7 +81,7 @@ public class Elf extends Thread {
      * @return random wait time (millis) in range from SantaConstants
      */
     public static long getRandomWaitTime() {
-        return SantaConstants.ELF_PROBLEM_MILLIS_LOW + 
+        return SantaConstants.ELF_PROBLEM_MILLIS_LOW +
                 (long)(Math.random() * ((SantaConstants.ELF_PROBLEM_MILLIS_HIGH -
                         SantaConstants.ELF_PROBLEM_MILLIS_LOW) + 1));
 
