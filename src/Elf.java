@@ -62,7 +62,7 @@ public class Elf extends Thread {
                         this.wait();
                     }
                 } catch (InterruptedException e) {
-                	//swallow interruption exception
+                	 e.printStackTrace();
                     
                 }
             }
