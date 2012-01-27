@@ -51,7 +51,7 @@ public class Elf extends Thread {
                 e.printStackTrace();
             }
             if (workshop.getProblemElfQueue().size() ==
-                    SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+                    SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION && !santa.haveReindeersArrived()) {
                 System.out.println(this.getName() + " was the third elf. Waking Santa");
                 santa.awaken();
             } else {
@@ -62,7 +62,8 @@ public class Elf extends Thread {
                         this.wait();
                     }
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                	//swallow interruption exception
+                    
                 }
             }
             //System.out.println(this.getName() + " problem solved. Back to making toys");
