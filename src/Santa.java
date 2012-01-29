@@ -57,20 +57,27 @@ public class Santa {
             System.out.println("Santa harnessed " + r.getName() + " to the sleigh!");
             r.setLocation(Reindeer.ReindeerLocation.LOADING_SLEIGH);
         }
+    	
         //Deliver presents!
-        System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
-        sleigh.countDown();
+    	synchronized (this){
+    		System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
+    		sleigh.countDown();
+    	
 
-        System.out.println("Christmas is over.");
+    		System.out.println("Christmas is over.");
+    	}
 
         //wait for reindeer to go back to tropics
         for (Reindeer deer : workshop.getReindeer()){
         	try {
+        		//notifyAll();
 				deer.join();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
         }
+        
+        
         System.exit(0);
 
     }

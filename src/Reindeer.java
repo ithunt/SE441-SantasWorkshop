@@ -5,6 +5,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * @author ian hunt
+ * @author Patrick McAfee
  * @date 1/16/12
  *
  * Represents one of Santa's Reindeers.
@@ -82,7 +83,7 @@ public class Reindeer extends Thread {
 
         //Christmas!
         this.location = ReindeerLocation.DELIVERING;
-
+        
         System.out.println(this.getName() +
                 " is done delivering presents. Back to the Bahamas baby!");
 

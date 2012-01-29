@@ -2,6 +2,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @author ian hunt
+ * @author Patrick McAfee
  * @date 1/16/12
  */
 public class Elf extends Thread {
@@ -52,7 +53,7 @@ public class Elf extends Thread {
             }
             if (workshop.getProblemElfQueue().size() ==
                     SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
-                System.out.println(this.getName() + " was the third elf. Waking Santa");
+                System.out.println(this.getName() + " was the last elf. Waking Santa");
                 santa.awaken();
             } else {
 

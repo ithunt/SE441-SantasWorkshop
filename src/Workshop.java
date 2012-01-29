@@ -40,7 +40,7 @@ public class Workshop {
     	// will make all names wait until the last one arrives.
     	// the last one to arrive will go and notify santa. 
     	// then, all names threads are released.
-    	this.warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
+    	this.warmingHut = new CyclicBarrier(SantaConstants.REINDEER_NAMES.length,
     								new Runnable() {
     									public void run() {
                                             reindeerReturned = true;
