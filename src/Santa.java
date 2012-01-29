@@ -29,7 +29,8 @@ public class Santa {
         if(workshop.isChristmas() && workshop.reindeerReturned()) {
             hookUpReindeer();
         } else if(workshop.getProblemElfQueue().size() ==
-                SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
+                SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION
+                && !workshop.isChristmas()) {
             this.solveElvesProblems();
         }
 
