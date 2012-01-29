@@ -1,0 +1,5874 @@
+Description: Intent of this test is to observe the behavior when elves have a relatively long range between they have problems. 
+
+Constants:
+
+public static final int NUM_ELVES = 3;
+	public static final int INIT_DAYS_TO_XMAS = 349;
+	public static final int ELF_COUNT_WORTH_SANTAS_ATTENTION = 3;
+	public static final int MILLIS_PER_DAY = 20;
+    public static final int ELF_PROBLEM_MILLIS_LOW = 1;
+    public static final int ELF_PROBLEM_MILLIS_HIGH = 20;
+	public static final double INIT_REINDEER_DELAY = INIT_DAYS_TO_XMAS * MILLIS_PER_DAY * .8;
+	public static final String[] REINDEER_NAMES =
+        {"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen", "Rudolph"};
+
+Output: 
+
+Prancer is off to the tropics!
+Dancer is off to the tropics!
+Rudolph is off to the tropics!
+Blitzen is off to the tropics!
+Donner is off to the tropics!
+Cupid is off to the tropics!
+Comet is off to the tropics!
+Vixen is off to the tropics!
+Dasher is off to the tropics!
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 1's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 1 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 3's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 2 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 2's problem solved. Back to making toys
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 2 has a problem
+Elf 2 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 1's problem solved. Back to making toys
+Elf 3's problem solved. Back to making toys
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 1 was the last elf. Waking Santa
+Elf 2 has a problem
+Elf 1 has a problem
+Elf 3 has a problem
+Elf 3 was the last elf. Waking Santa
+Santa is solving those pesky elf problems
+Elf 2's problem solved. Back to making toys
+Elf 3 has a problem
+Elf 2 has a problem
+Comet returned from the tropics. Waiting in the warming hut
+Dancer returned from the tropics. Waiting in the warming hut
+Cupid returned from the tropics. Waiting in the warming hut
+Blitzen returned from the tropics. Waiting in the warming hut
+Vixen returned from the tropics. Waiting in the warming hut
+Dasher returned from the tropics. Waiting in the warming hut
+Donner returned from the tropics. Waiting in the warming hut
+Prancer returned from the tropics. Waiting in the warming hut
+Rudolph returned from the tropics. Waiting in the warming hut
+All the reindeer have returned!
+Christmas!
+Santa harnessed Dasher to the sleigh!
+Santa harnessed Dancer to the sleigh!
+Santa harnessed Prancer to the sleigh!
+Santa harnessed Vixen to the sleigh!
+Santa harnessed Comet to the sleigh!
+Santa harnessed Cupid to the sleigh!
+Santa harnessed Donner to the sleigh!
+Santa harnessed Blitzen to the sleigh!
+Santa harnessed Rudolph to the sleigh!
+HO HO HO MERRRRRY CHRISTMAS!
+Christmas is over.
+Rudolph is done delivering presents. Back to the Bahamas baby!
+Comet is done delivering presents. Back to the Bahamas baby!
+Dancer is done delivering presents. Back to the Bahamas baby!
+Cupid is done delivering presents. Back to the Bahamas baby!
+Blitzen is done delivering presents. Back to the Bahamas baby!
+Vixen is done delivering presents. Back to the Bahamas baby!
+Dasher is done delivering presents. Back to the Bahamas baby!
+Prancer is done delivering presents. Back to the Bahamas baby!
+Donner is done delivering presents. Back to the Bahamas baby!
