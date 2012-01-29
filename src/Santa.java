@@ -61,7 +61,16 @@ public class Santa {
         System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
         sleigh.countDown();
 
-        System.out.println("Christmas over, exiting");
+        System.out.println("Christmas is over.");
+
+        //wait for reindeer to go back to tropics
+        for (Reindeer deer : workshop.getReindeer()){
+        	try {
+				deer.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+        }
         System.exit(0);
 
     }
