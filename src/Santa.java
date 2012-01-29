@@ -31,7 +31,6 @@ public class Santa {
         } else if(workshop.getProblemElfQueue().size() ==
                 SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
             this.solveElvesProblems();
-            System.out.println("Santa done solving those pesky elf problems");
         }
 
 
@@ -41,6 +40,7 @@ public class Santa {
      * Iterates through elfqueue and solves their problems (notify)
      */
     private synchronized void solveElvesProblems() {
+    	System.out.println("Santa is solving those pesky elf problems");
         for(Elf e : workshop.getProblemElfQueue()) {
             synchronized (e) {
                 e.notify();
@@ -59,18 +59,13 @@ public class Santa {
         }
     	
         //Deliver presents!
-    	synchronized (this){
-    		System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
-    		sleigh.countDown();
-    	
-
-    		System.out.println("Christmas is over.");
-    	}
+    	System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
+    	System.out.println("Christmas is over.");
+    	sleigh.countDown();
 
         //wait for reindeer to go back to tropics
         for (Reindeer deer : workshop.getReindeer()){
         	try {
-        		//notifyAll();
 				deer.join();
 			} catch (InterruptedException e) {
 				e.printStackTrace();

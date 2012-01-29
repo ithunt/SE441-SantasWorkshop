@@ -73,7 +73,7 @@ public class Workshop {
      */
     public void initElves(CountDownLatch start) {
     	for(int i=0; i < SantaConstants.NUM_ELVES; i++ ) {
-    		Elf elf = new Elf(this, santa, start);
+    		Elf elf = new Elf(i+1, this, santa, start);
             elves.add(elf);
             elf.start();
         }

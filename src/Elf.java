@@ -10,6 +10,7 @@ public class Elf extends Thread {
     private final Workshop workshop;
     private final Santa santa;
     private final CountDownLatch start;
+    private final String elfName;
 
     /**
      * Elf constructor
@@ -17,10 +18,11 @@ public class Elf extends Thread {
      * @param santa Santa (so he can be woken)
      * @param start Start Signal
      */
-    public Elf(Workshop workshop, Santa santa, CountDownLatch start) {
+    public Elf(int elfNumber, Workshop workshop, Santa santa, CountDownLatch start) {
         this.workshop = workshop;
         this.santa = santa;
         this.start = start;
+        this.elfName = "Elf "+elfNumber;
     }
 
     /**
@@ -43,7 +45,7 @@ public class Elf extends Thread {
                 ex.printStackTrace();
             }
 
-            //System.out.println(this.getName() + " has a problem");
+            System.out.println(this.elfName + " has a problem");
 
             try {
                 //Add self to queue
@@ -53,7 +55,7 @@ public class Elf extends Thread {
             }
             if (workshop.getProblemElfQueue().size() ==
                     SantaConstants.ELF_COUNT_WORTH_SANTAS_ATTENTION) {
-                System.out.println(this.getName() + " was the last elf. Waking Santa");
+                System.out.println(this.elfName + " was the last elf. Waking Santa");
                 santa.awaken();
             } else {
 
@@ -61,12 +63,12 @@ public class Elf extends Thread {
                 try {
                     synchronized (this) {
                         this.wait();
+                        System.out.println(this.elfName + "'s problem solved. Back to making toys");
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            //System.out.println(this.getName() + " problem solved. Back to making toys");
 
 
             if (this.isInterrupted()) break;
