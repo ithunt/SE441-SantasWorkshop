@@ -1,6 +1,5 @@
 import java.util.AbstractQueue;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -38,12 +37,13 @@ public class Workshop {
      */
     public Workshop() {
 
+    	// will make all names wait until the last one arrives.
+    	// the last one to arrive will go and notify santa. 
+    	// then, all names threads are released.
     	this.warmingHut = new CyclicBarrier(SantaConstants.NUM_REINDEER,
     								new Runnable() {
     									public void run() {
                                             reindeerReturned = true;
-                                            santa.reindeersArrived();
-                                           
                                             System.out.println("All the reindeer have returned!");
     									}
     	});

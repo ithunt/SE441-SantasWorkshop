@@ -9,7 +9,6 @@ public class Santa {
 
     private final Workshop workshop;
     private final CountDownLatch sleigh;
-    private boolean reindeersArrived;
 
     /**
      * Santa Constructor
@@ -19,7 +18,6 @@ public class Santa {
     public Santa(Workshop workshop, CountDownLatch sleigh) {
         this.workshop = workshop;
         this.sleigh = sleigh;
-        reindeersArrived = false;
     }
 
     /**
@@ -63,32 +61,9 @@ public class Santa {
         System.out.println("HO HO HO MERRRRRY CHRISTMAS!");
         sleigh.countDown();
 
-
-        //wait for each reindeer to finish
-        for(Reindeer r : workshop.getReindeer()) {
-            try {
-                r.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        System.out.println("Christmas over, exiting");
         System.exit(0);
 
-    }
-    
-    /**
-     * The last reindeer has arrived, inform Santa to not help any more elves.
-     */
-    public void reindeersArrived(){
-    	reindeersArrived = true;
-    }
-    
-    /**
-     * Returns whether the last reindeer has arrived.
-     * @return	boolean true/false determined if last reindeer has arrived or not.
-     */
-    public boolean haveReindeersArrived(){
-    	return reindeersArrived;
     }
     
 }
