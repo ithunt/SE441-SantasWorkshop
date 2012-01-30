@@ -6,6 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * @author ian hunt
  * @author Patrick McAfee
+ * @author Christoffer Rosen
  * @date 1/16/12
  *
  * Represents one of Santa's Reindeers.
@@ -90,14 +91,27 @@ public class Reindeer extends Thread {
 
     }
 
+    /**
+     * Returns the reindeer location.
+     * @return	Location of the reindeer
+     */
     public ReindeerLocation getLocation() {
         return location;
     }
 
+    
+    /**
+     * Sets the location of the reindeer.
+     * @param location	Location to set the reindeer
+     */
     public void setLocation(ReindeerLocation location) {
         this.location = location;
     }
 
+    /**
+     * Get the reindeer wait time.
+     * @return	Returns the reindeer wait time.
+     */
     public static long getReindeerWaitTime() {
         return (long)SantaConstants.INIT_REINDEER_DELAY +
                 (long)(Math.random() * (SantaConstants.INIT_DAYS_TO_XMAS *

@@ -1,6 +1,4 @@
-import java.util.AbstractQueue;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -8,6 +6,10 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 /**
+ * Represents Santa's workshop. It takes care of all the reindeer and elves,
+ * initializing them and creating appropriate barriers/countdown latches/queues.
+ * It also holds information whether its Christmas yet or not for Santa.  
+ *                                                                
  * @author ian hunt
  * @author christoffer rosen
  * @date 1/16/12

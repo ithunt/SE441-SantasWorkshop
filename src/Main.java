@@ -3,6 +3,9 @@ import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * The main method. Starts the simulation and creates a task
+ * to run at Christmas.
+ * 
  * @author ian hunt
  * @date 1/16/12
  */

@@ -1,8 +1,15 @@
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * 
+ * Represents an elf. Encounters problem after a certain amount of time, in which
+ * he/she then will put himself in the problem queue. When three elves are in the 
+ * problem queue, the elves will try to wake Santa and have him fix their
+ * problems.
+ * 
  * @author ian hunt
  * @author Patrick McAfee
+ * @author Christoffer Rosen
  * @date 1/16/12
  */
 public class Elf extends Thread {
@@ -26,7 +33,8 @@ public class Elf extends Thread {
     }
 
     /**
-     * Main elf running thread. Waits for start signal, has problems till christmas
+     * Main elf running thread. Waits for start signal, then will have problems after
+     * a certain amounts of time that requires the attension of Santa.
      */
     public void run() {
 

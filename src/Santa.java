@@ -1,7 +1,11 @@
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * Represents Santa. Santa is an object that either awakens to
+ * fix elves problems or does Christmas. His awaken method is
+ * synchronized, making it thread safe so that multiple threads
+ * can simultaneously call it, such as reindeer or elves.
+ * 
  * @author ian hunt
  * @date 1/16/12
  */
